@@ -6,7 +6,6 @@ import PlaylistFavouriteIcon from "@assets/icons/PlaylistFavouriteIcon";
 import PlaylistIcon from "@assets/icons/PlaylistIcon";
 import SearchIcon from "@assets/icons/SearchIconn";
 import React from "react";
-import { NavLink } from "react-router-dom";
 import NavItem from "./NavItem";
 
 const Sidebar: React.FC = () => {

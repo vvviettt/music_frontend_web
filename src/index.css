@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: CircularSp, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -15,3 +13,18 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: CircularSp;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./assets/fonts/CircularSp-Bold-fe1cfc14b7498b187c78fa72fb72d148.woff2")
+    format("woff2");
+}
+@font-face {
+  font-family: CircularSp;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/fonts/CircularSp-Book-4eaffdf96f4c6f984686e93d5d9cb325.woff2")
+    format("woff2");
+}
