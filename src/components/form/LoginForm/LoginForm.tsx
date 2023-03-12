@@ -3,14 +3,12 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { joiResolver } from "@hookform/resolvers/joi";
 import Joi from "joi";
-
-interface LoginState {
-  email: string;
-  password: string;
-  isRemember: boolean;
-}
+import { LoginDataForm } from "@redux/slices/userSlice/interface";
+import { useAppDispatch } from "@redux/store";
+import { loginAction } from "@redux/slices";
 
 export const LoginForm: React.FC = () => {
+  const dispatch = useAppDispatch();
   const schema = Joi.object({
     email: Joi.string()
       .email({ tlds: { allow: false } })
@@ -22,15 +20,13 @@ export const LoginForm: React.FC = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginState>({
+  } = useForm<LoginDataForm>({
     resolver: joiResolver(schema),
     defaultValues: { email: "", password: "" },
   });
 
-  const onSubmit = (data: LoginState) => {
-    console.log("====================================");
-    console.log(data);
-    console.log("====================================");
+  const onSubmit = (data: LoginDataForm) => {
+    dispatch(loginAction(data));
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="mt-5">
